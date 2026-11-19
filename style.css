@@ -162,7 +162,7 @@ body.home .site-header {
   left: 0;
   right: 0;
   z-index: 3;            /* above the carousel */
-  background: rgba(16, 16, 16, 0.2);
+  background: rgba(16, 16, 16, 0.1);
   border: 1px;          /* remove the separator lines over photos */
 }
 
