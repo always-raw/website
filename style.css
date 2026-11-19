@@ -162,7 +162,7 @@ body.home .site-header {
   left: 0;
   right: 0;
   z-index: 3;            /* above the carousel */
-  background: rgba(16, 16, 16, 0.4);
+  background: rgba(16, 16, 16, 0.2);
   border: 1px;          /* remove the separator lines over photos */
 }
 
@@ -171,18 +171,13 @@ body.home .site-header {
   -webkit-backdrop-filter: blur(8px);
 }
 
-body.home .site-footer {}
-
 body.home .site-header { top: 0; }
-body.home .site-footer { bottom: 0; }
 
 body.home .site-header a,
-body.home .site-footer p,
 body.home .carousel-btn,
 body.home .carousel-dots button { color: rgba(255, 255, 255, 0.8); }
 
-body.home .logo,
-body.home .site-footer p {
+body.home .logo {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
