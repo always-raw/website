@@ -167,8 +167,8 @@ body.home .site-header {
 }
 
 body.home .site-header {
-  backdrop-filter: blur(8px);   /* blurs whatever is behind the header */
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);   /* blurs whatever is behind the header */
+  -webkit-backdrop-filter: blur(2px);
 }
 
 body.home .site-header { top: 0; }
