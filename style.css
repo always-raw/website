@@ -79,7 +79,7 @@ h1, h2, h3 {
 /* ---------- About split layout ---------- */
 .about {
   display: flex;
-  gap: 3rem;
+  gap: 20rem;
   align-items: flex-start;
 }
 
