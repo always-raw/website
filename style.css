@@ -79,7 +79,7 @@ h1, h2, h3 {
 /* ---------- About split layout ---------- */
 .about {
   display: flex;
-  gap: 20rem;
+  gap: 3rem;
   align-items: flex-start;
 }
 
@@ -103,6 +103,7 @@ h1, h2, h3 {
 
 @media (max-width: 700px) {
   .about { flex-direction: column; }   /* photo stacks on top, text below */
+  .about-photo { margin-bottom: 2rem; }   /* space between photo and text on mobile */
   .page-title { font-size: 2rem; }
 }
 
