@@ -157,15 +157,21 @@ body.home .site-main {
 
 /* ---------- Header / Footer ---------- */
 
-body.home .site-header,
-body.home .site-footer {
+body.home .site-header {
   position: fixed;
   left: 0;
   right: 0;
   z-index: 3;            /* above the carousel */
-  background: transparent;
-  border: none;          /* remove the separator lines over photos */
+  background: rgba(16, 16, 16, 0.4);
+  border: 1px;          /* remove the separator lines over photos */
 }
+
+body.home .site-header {
+  backdrop-filter: blur(8px);   /* blurs whatever is behind the header */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+body.home .site-footer {}
 
 body.home .site-header { top: 0; }
 body.home .site-footer { bottom: 0; }
