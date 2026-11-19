@@ -162,13 +162,13 @@ body.home .site-header {
   left: 0;
   right: 0;
   z-index: 3;            /* above the carousel */
-  background: rgba(16, 16, 16, 0.1);
+  background: rgba(16, 16, 16, 0.2);
   border: 1px;          /* remove the separator lines over photos */
 }
 
 body.home .site-header {
   backdrop-filter: blur(2px);   /* blurs whatever is behind the header */
-  -webkit-backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 body.home .site-header { top: 0; }
