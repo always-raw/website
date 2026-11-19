@@ -1,0 +1,140 @@
+/* ---------- Base ---------- */
+:root {
+  --bg: #101010;
+  --text: #e8e6e3;
+  --muted: #9a968f;
+  --accent: #ffffff;
+  --max-width: 1100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
+a:hover { opacity: 0.6; }
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.site-nav a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-left: 2rem;
+  color: var(--muted);
+}
+
+.site-nav a.active,
+.site-nav a:hover { color: var(--accent); opacity: 1; }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+}
+
+.hero-caption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
+}
+
+/* ---------- Gallery (masonry via columns) ---------- */
+.gallery {
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+  columns: 2;
+  column-gap: 1.5rem;
+}
+
+.photo {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.photo img {
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.photo img:hover { opacity: 0.85; }
+
+.photo figcaption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 5rem auto 0;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid #262626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.social a {
+  margin-right: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.social a:hover { color: var(--accent); opacity: 1; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .gallery { columns: 1; }
+  .hero img { height: 55vh; }
+  .site-header { flex-direction: column; gap: 0.8rem; }
+  .site-nav a:first-child { margin-left: 0; }
+}
