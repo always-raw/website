@@ -138,3 +138,71 @@ h1, h2, h3 {
     margin: 0.35rem 0.7rem;   /* lets the four links wrap on small screens */
   }
 }
+
+/* ---------- Homepage: fixed, no scroll ---------- */
+body.home {
+  height: 100vh;
+  height: 100dvh;   /* same thing, but more accurate on mobile browsers */
+  overflow: hidden; /* the magic line: nothing scrolls off-screen */
+}
+
+body.home .site-main {
+  padding: 0;
+  display: flex;         /* lets the carousel stretch */
+}
+
+/* ---------- Carousel ---------- */
+.carousel {
+  position: relative;
+  flex: 1;               /* fill ALL space left between header and footer */
+  overflow: hidden;      /* crops anything sticking out */
+}
+
+.slide {
+  position: absolute;
+  inset: 0;              /* shorthand for top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* ← the cropping trick: fills the screen, trims excess */
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.is-active { opacity: 1; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 2;
+}
+.carousel-btn:hover { color: #fff; }
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 2;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dots button.is-active { background: #fff; }

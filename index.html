@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
   <header class="site-header">
     <a class="logo" href="index.html">Nikos Kanistras</a>
     <nav class="site-nav">
@@ -21,7 +21,18 @@
   </header>
 
   <main class="site-main">
-    <!-- Content will be added here -->
+    <div class="carousel">
+      <img class="slide is-active" src="images/20210612-Orama_Wrkshp_Omonoia_Gray_Square-0074.jpg" alt="Slide one">
+      <img class="slide" src="images/20240413-BerlinDE-Demo_PalaestineKongress-0263.jpg" alt="Slide two">
+      <img class="slide" src="images/20240509-AlKhalilPS-StreetPhotography-0262.jpg" alt="Slide three">
+      <img class="slide" src="images/20251111-BulqizeAL-Workshop-0398.jpg" alt="Slide four">
+      <img class="slide" src="images/20250228-BerlinDE-Rally_Commemoration2YearsTempiTrainCrash-0039.jpg" alt="Slide five">
+
+      <button class="carousel-btn prev" aria-label="Previous photo">&#8249;</button>
+      <button class="carousel-btn next" aria-label="Next photo">&#8250;</button>
+
+      <div class="carousel-dots"></div>
+    </div>
   </main>
 
   <footer class="site-footer">
