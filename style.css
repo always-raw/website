@@ -67,6 +67,45 @@ h1, h2, h3 {
 
 .site-nav a:hover { color: var(--accent); opacity: 1; }
 
+/* Active nav link */
+.site-nav a.active { color: var(--accent); }
+
+/* Serif title used on every page */
+.page-title {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- About split layout ---------- */
+.about {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 1;                 /* left half */
+}
+
+.about-photo img {
+  width: 100%;
+}
+
+.about-text {
+  flex: 1;                 /* right half */
+  max-width: 34em;         /* keeps lines readable, not too long */
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .about { flex-direction: column; }   /* photo stacks on top, text below */
+  .page-title { font-size: 2rem; }
+}
+
 /* ---------- Main ---------- */
 /* flex: 1 pushes the footer down when content is short */
 .site-main {
