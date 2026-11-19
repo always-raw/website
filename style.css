@@ -151,11 +151,40 @@ body.home .site-main {
   display: flex;         /* lets the carousel stretch */
 }
 
+body.home .site-main {
+  padding: 0;
+}
+
+/* ---------- Header / Footer ---------- */
+
+body.home .site-header,
+body.home .site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 3;            /* above the carousel */
+  background: transparent;
+  border: none;          /* remove the separator lines over photos */
+}
+
+body.home .site-header { top: 0; }
+body.home .site-footer { bottom: 0; }
+
+body.home .site-header a,
+body.home .site-footer p,
+body.home .carousel-btn,
+body.home .carousel-dots button { color: rgba(255, 255, 255, 0.8); }
+
+body.home .logo,
+body.home .site-footer p {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
 /* ---------- Carousel ---------- */
 .carousel {
-  position: relative;
-  flex: 1;               /* fill ALL space left between header and footer */
-  overflow: hidden;      /* crops anything sticking out */
+  position: fixed;    /* floats over everything, independent of page flow */
+  inset: 0;           /* sticks to all four edges of the screen */
+  overflow: hidden;
 }
 
 .slide {
