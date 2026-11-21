@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nikos Kanistras — Photography</title>
+  <title>Tearsheets — Nikos Kanistras</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +22,26 @@
 
   <main class="site-main">
     <h1 class="page-title">Tearsheets</h1>
+
+       <!-- The masonry wall. One <figure> per tearsheet.
+         The three data-* attributes feed the lightbox. -->
+    <div class="tearsheets-grid">
+
+      <figure class="tearsheet"
+              data-caption="TDie Zeit, Germany, 2026"
+              data-article="https://www.zeit.de/gesellschaft/zeitgeschehen/2026-11/gen-z-proteste-schueler-berlin-leipzig-frankfurt">
+        <img src="images/tearsheets/20261121_DieZeit.png"
+             alt=""
+             loading="lazy">
+        <figcaption>Die Zeit, Germany, 2026</figcaption>
+      </figure>
+
+      <!-- To add another tearsheet, copy the <figure> block above,
+           change the image src, the alt text, the caption,
+           and the data-article URL. Nothing else to touch. -->
+
+    </div>
+  </main>
   </main>
 
 
@@ -29,7 +49,70 @@
     <p>&copy; Nikos Kanistras All Rights Reserved.</p>
   </footer>
 
-  
+  <!-- ---------- Lightbox (hidden until a tearsheet is clicked) ---------- -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&#10005;</button>
+    <figure class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    // Open: read the three data-* attributes from the clicked figure
+    document.querySelectorAll(".tearsheet").forEach(function (fig) {
+      fig.addEventListener("click", function () {
+        lightboxImg.src = fig.querySelector("img").src;
+        lightboxImg.alt = fig.querySelector("img").alt;
+
+        // Build the caption as a link to the original article
+        const link = document.createElement("a");
+        link.href = fig.dataset.article;
+        link.target = "_blank";       // open in a new tab
+        link.rel = "noopener";         // good practice for new tabs
+        link.textContent = fig.dataset.caption;
+
+        lightboxCaption.innerHTML = "";
+        lightboxCaption.appendChild(link);
+
+        lightbox.hidden = false;
+      });
+    });
+
+    // Close helpers
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.src = "";           // frees the browser's memory
+    }
+
+    document.getElementById("lightbox-close")
+      .addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();  // clicked the dark backdrop
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  </script>
+
+  <!-- 
   <script src="script.js"></script>
+  -->
+
+</body>
+</html>
+
+
+ 
+
+
+
+  
 </body>
 </html>
