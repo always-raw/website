@@ -283,9 +283,6 @@ body.home .logo {
 
 .tearsheet img {
   width: 100%;
-  padding: 0.6rem;                /* the "paper edge" */
-  border: 1px solid var(--border);
-  background: #161616;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
