@@ -241,10 +241,10 @@ body.home .logo {
 .tearsheets-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);   /* two large sheets per row */
-  align-items: start;    /* ← add this: items keep their natural height */
-  gap: 1.5rem;
+  gap: 1.40rem;
   max-width: 1400px;                       /* keeps the sheets generous, not stretched */
   margin: 0 auto;                          /* centers the whole wall on screen */
+  align-items: start;                      /* ← each sheet keeps its own natural height */
 }
 
 .tearsheet {
@@ -256,19 +256,16 @@ body.home .logo {
 
 .tearsheet img {
   width: 100%;
-  border: none;
-  padding: 0;
-  background: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* the gentle enlargement on hover */
 .tearsheet:hover img {
-  transform: scale(1.03);
+  transform: scale(1.02);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
 }
 
-/* left-aligned caption, as requested */
+/* left-aligned caption */
 .tearsheet-caption {
   display: block;
   text-align: left;
