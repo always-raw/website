@@ -239,34 +239,6 @@ body.home .logo {
 
 /* ---------- Tearsheets page ---------- */
 .tearsheets-grid {
-  column-count: 3;              /* masonry: 3 columns on desktop */
-  column-gap: 1.5rem;
-}
-
-.tearsheet {
-  break-inside: avoid;          /* keeps a sheet from splitting across columns */
-  margin: 0 0 1.5rem;
-  cursor: pointer;
-  padding: 0.6rem;              /* the "paper edge" around the printed page */
-  border: 1px solid var(--border);
-  background: #161616;
-  transition: border-color 0.2s ease;
-}
-
-.tearsheet:hover { border-color: #3a3a3a; }
-
-.tearsheet img { width: 100%; }
-
-.tearsheet figcaption {
-  margin-top: 0.6rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  text-align: center;
-}
-
-/* ---------- Tearsheets page ---------- */
-.tearsheets-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);   /* two large sheets per row */
   gap: 2.5rem;
