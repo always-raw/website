@@ -283,6 +283,9 @@ body.home .logo {
 
 .tearsheet img {
   width: 100%;
+  border: none;
+  padding: 0;
+  background: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
