@@ -1,4 +1,4 @@
-/* ---------- Base ---------- */
+/* ---------- Base: shared by ALL pages ---------- */
 :root {
   --bg: #101010;
   --text: #e8e6e3;
@@ -21,8 +21,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 
-  /* Sticky footer: viewport fills the screen, footer stays at the bottom
-     even when the page is (almost) empty */
+  /* Sticky footer: footer stays at the bottom on short pages */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,11 +38,11 @@ h1, h2, h3 {
   letter-spacing: 0.02em;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header (injected by header.js) ---------- */
 .site-header {
   text-align: center;
   padding: 2.5rem 1.5rem 1.5rem;
-  border-bottom: 1px solid var(--border);   /* same color as footer's line */
+  border-bottom: 1px solid var(--border);
 }
 
 .logo {
@@ -54,9 +53,7 @@ h1, h2, h3 {
   letter-spacing: 0.08em;
 }
 
-.site-nav {
-  margin-top: 0.9rem;
-}
+.site-nav { margin-top: 0.9rem; }
 
 .site-nav a {
   font-size: 0.78rem;
@@ -67,59 +64,25 @@ h1, h2, h3 {
 }
 
 .site-nav a:hover { color: var(--accent); opacity: 1; }
-
-/* Active nav link */
 .site-nav a.active { color: var(--accent); }
 
-/* Serif title used on every page */
+/* ---------- Page title ---------- */
 .page-title {
   font-size: 2.4rem;
   margin-bottom: 2.5rem;
   text-align: center;
 }
 
-/* ---------- About split layout ---------- */
-.about {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.about-photo {
-  flex: 1;                 /* left half */
-}
-
-.about-photo img {
-  width: 100%;
-}
-
-.about-text {
-  flex: 1;                 /* right half */
-  max-width: 34em;         /* keeps lines readable, not too long */
-}
-
-.about-text p {
-  margin-bottom: 1.2rem;
-  color: var(--text);
-}
-
-@media (max-width: 700px) {
-  .about { flex-direction: column; }   /* photo stacks on top, text below */
-  .about-photo { margin-bottom: 2rem; }   /* space between photo and text on mobile */
-  .page-title { font-size: 2rem; }
-}
-
 /* ---------- Main ---------- */
-/* flex: 1 pushes the footer down when content is short */
 .site-main {
-  flex: 1;
+  flex: 1;                        /* pushes the footer down when content is short */
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (injected by header.js) ---------- */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem;
@@ -135,146 +98,8 @@ h1, h2, h3 {
 
   .site-nav a {
     display: inline-block;
-    margin: 0.35rem 0.7rem;   /* lets the four links wrap on small screens */
+    margin: 0.35rem 0.7rem;       /* lets the links wrap on small screens */
   }
-}
 
-/* ---------- Homepage: fixed, no scroll ---------- */
-body.home {
-  height: 100vh;
-  height: 100dvh;   /* same thing, but more accurate on mobile browsers */
-  overflow: hidden; /* the magic line: nothing scrolls off-screen */
-}
-
-body.home .site-main {
-  padding: 0;
-  display: flex;         /* lets the carousel stretch */
-}
-
-body.home .site-main {
-  padding: 0;
-}
-
-/* ---------- Header / Footer ---------- */
-
-body.home .site-header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 3;            /* above the carousel */
-  background: rgba(16, 16, 16, 0.2);
-  border: 1px;          /* remove the separator lines over photos */
-}
-
-body.home .site-header {
-  backdrop-filter: blur(2px);   /* blurs whatever is behind the header */
-  -webkit-backdrop-filter: blur(4px);
-}
-
-body.home .site-header { top: 0; }
-
-body.home .site-header a,
-body.home .carousel-btn,
-body.home .carousel-dots button { color: rgba(255, 255, 255, 0.8); }
-
-body.home .logo {
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-}
-
-/* ---------- Carousel ---------- */
-.carousel {
-  position: fixed;    /* floats over everything, independent of page flow */
-  inset: 0;           /* sticks to all four edges of the screen */
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  inset: 0;              /* shorthand for top/right/bottom/left: 0 */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* ← the cropping trick: fills the screen, trims excess */
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.slide.is-active { opacity: 1; }
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 2.5rem;
-  cursor: pointer;
-  padding: 1rem;
-  z-index: 2;
-}
-.carousel-btn:hover { color: #fff; }
-.carousel-btn.prev { left: 1rem; }
-.carousel-btn.next { right: 1rem; }
-
-.carousel-dots {
-  position: absolute;
-  bottom: 1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.6rem;
-  z-index: 2;
-}
-
-.carousel-dots button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  padding: 0;
-}
-.carousel-dots button.is-active { background: #fff; }
-
-/* ---------- Tearsheets page ---------- */
-.tearsheets-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* two large sheets per row */
-  gap: 1.40rem;
-  max-width: 1400px;                       /* keeps the sheets generous, not stretched */
-  margin: 0 auto;                          /* centers the whole wall on screen */
-  align-items: start;                      /* ← each sheet keeps its own natural height */
-}
-
-.tearsheet {
-  display: block;
-}
-
-/* keep the global link-dimming from fading the sheet on hover */
-.tearsheet:hover { opacity: 1; }
-
-.tearsheet img {
-  width: 100%;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* the gentle enlargement on hover */
-.tearsheet:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
-}
-
-/* left-aligned caption */
-.tearsheet-caption {
-  display: block;
-  text-align: left;
-  margin-top: 0.7rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
-
-@media (max-width: 700px) {
-  .tearsheets-grid { grid-template-columns: 1fr; }  /* one big sheet per row */
+  .page-title { font-size: 2rem; }
 }

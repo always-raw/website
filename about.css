@@ -1,0 +1,24 @@
+/* ---------- About split layout ---------- */
+.about {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-photo { flex: 1; }
+.about-photo img { width: 100%; }
+
+.about-text {
+  flex: 1;
+  max-width: 34em;        /* keeps lines readable */
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .about { flex-direction: column; }     /* photo stacks on top of text */
+  .about-photo { margin-bottom: 2rem; }
+}

@@ -8,22 +8,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tearsheets.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="index.html">Nikos Kanistras</a>
-    <nav class="site-nav">
-        <a href="stories.html">Stories</a>
-        <a href="reportage.html">Reportage</a>
-        <a href="tearsheets.html" class="active">Tearsheets</a>
-        <a href="about.html">About</a>
-    </nav>
-  </header>
+  <script src="header.js"></script>
 
   <main class="site-main">
     <h1 class="page-title">Tearsheets</h1>
 
-        <div class="tearsheets-grid">
+    <div class="tearsheets-grid">
+
 
       <!-- Copy this block for each new tearsheet.
            Change: href (article URL), img src, alt text, caption text. -->
@@ -34,6 +28,22 @@
         <img src="images/tearsheets/20261121_DieZeit_DE.png"
              alt="Tearsheet: Die Zeit, Gen-Z school protests" loading="lazy">
         <span class="tearsheet-caption">Die Zeit, Germany, 2026</span>
+      </a>
+
+      <a class="tearsheet"
+         href="https://www.telegraph.co.uk/world-news/2026/11/17/berlins-mamdani-police-risk-black-people-left-eralp-video/"
+         target="_blank" rel="noopener">
+        <img src="images/tearsheets/20261117_TheTelegraph_UK.png"
+             alt="Tearsheet: The Telegraph, ‘Berlin’s Mamdani’ says police pose risk to black people and the Left" loading="lazy">
+        <span class="tearsheet-caption">The Telegraph, United Kingdom, 2026</span>
+      </a>
+
+      <a class="tearsheet"
+         href="https://www.thetimes.com/world/europe/article/berlin-pride-crash-several-hurt-after-van-driven-into-crowd-6kxd6mqct"
+         target="_blank" rel="noopener">
+        <img src="images/tearsheets/20260726_TheTimes_UK.png"
+             alt="Tearsheet: The Sunday Times, Berlin Pride attack suspect shot" loading="lazy">
+        <span class="tearsheet-caption">The Sunday Times, United Kingdom, 2026</span>
       </a>
 
       <a class="tearsheet"
@@ -115,8 +125,6 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; Nikos Kanistras. All rights reserved.</p>
-  </footer>
-  </body>
+  <script src="tearsheets.js"></script>
+</body>
 </html>

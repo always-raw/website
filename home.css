@@ -1,0 +1,92 @@
+/* ---------- Homepage only ---------- */
+
+/* Fixed, no scroll */
+body.home {
+  height: 100vh;
+  height: 100dvh;              /* more accurate on mobile browsers */
+  overflow: hidden;
+}
+
+body.home .site-main {
+  padding: 0;
+  display: flex;               /* lets the carousel stretch */
+}
+
+/* Transparent blurred header floating over the photos */
+body.home .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(16, 16, 16, 0.2);
+  border: none;                /* no separator line over photos */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+body.home .site-header a,
+body.home .carousel-btn,
+body.home .carousel-dots button { color: rgba(255, 255, 255, 0.8); }
+
+body.home .logo { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Carousel ---------- */
+.carousel {
+  position: fixed;             /* fills the screen, independent of page flow */
+  inset: 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* fills the screen, trims the excess */
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.is-active { opacity: 1; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 2;
+}
+.carousel-btn:hover { color: #fff; }
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 2;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dots button.is-active { background: #fff; }
+
+@media (max-width: 700px) {
+  .carousel-btn { font-size: 1.8rem; padding: 0.6rem; }
+}
