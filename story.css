@@ -210,7 +210,7 @@
     bottom: 7vh;
   }
 
-  .story-cover { height: 80vh; }
+  .story-cover { height: 42vh; }
 
   .story-duo { grid-template-columns: 1fr; }
   .story-duo .story-photo { margin: 2rem 0; }
