@@ -11,11 +11,23 @@
 .about-text {
   flex: 1;
   max-width: 34em;        /* keeps lines readable */
+  text-align: justify;
 }
 
 .about-text p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.0rem;
   color: var(--text);
+}
+
+.about-text .lead {
+  font-size: 1.25em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}
+
+.about-text .contact a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 @media (max-width: 700px) {
