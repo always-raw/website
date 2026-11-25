@@ -16,14 +16,33 @@
   <main class="site-main">
     <h1 class="page-title">Stories</h1>
 
-    <!-- When you add stories, drop cards in here -->
-    <div class="stories-grid">
-      <!--
-      <a class="story-card" href="addiction.html">
-        <img src="images/stories/omonoia/20210612-Orama_Wrkshp_Omonoia_Gray_Square-0012.jpg" alt="Tales of Addiction">
-        <span class="story-caption">Tales of Addiction — Athens, 2021</span>
+    <!-- ============ STORY LIST — one column, mini-covers ============
+         HOW TO ADD A NEW STORY:
+         1. Duplicate the <a class="story-listing"> block.
+         2. Point href to the story page file (e.g. omonoia.html).
+         3. Swap the image — best to reuse the story's hero photo,
+            so card and cover read as the same article.
+         4. Fill title, subtitle, place/date EXACTLY as on the
+            story cover, so they match when the reader clicks in. -->
+    <div class="stories-list">
+
+      <!-- ===== ONE STORY ===== -->
+      <a class="story-listing" href="story_addiction.html">
+        <img src="images/stories/omonoia/20210612-Orama_Wrkshp_Omonoia_Gray_Square-0043.jpg"
+             alt="Cover photo of the Omonoia story"
+             loading="lazy">
+        <span class="listing-overlay"></span>
+        <span class="listing-text">
+          <span class="listing-title">Behind Athens&rsquo; Unseen Streets</span>
+          <span class="listing-subtitle">Stories of the people everyone avoids</span>
+          <span class="listing-meta">Athens, Greece — 2021</span>
+        </span>
       </a>
-      -->
+      <!-- ===== END OF STORY ===== -->
+
+      <!-- Copy-paste the block above for each new story.
+           First card above is filled in as a working example. -->
+
     </div>
   </main>
 
