@@ -10,7 +10,7 @@
 
 .about-text {
   flex: 1;
-  max-width: 34em;        /* keeps lines readable */
+  max-width: 100%;        /* keeps lines readable */
   text-align: justify;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .about-text .lead {
-  font-size: 1.25em;
+  font-size: 1.1em;
   line-height: 1.5;
   margin-bottom: 1.5em;
 }
